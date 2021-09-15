@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Scanner_App</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ID-Icon.png" />
+    <None Remove="img\Camera-Icon.png" />
+    <None Remove="img\EasyID-Logo.png" />
+    <None Remove="img\EasyID-Small.png" />
+    <None Remove="img\ID-Icon.png" />
+    <None Remove="img\Settings-Icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ID-Icon.png" />
+    <Resource Include="img\EasyID-Small.png" />
+    <Resource Include="img\ID-Icon.png" />
+    <Resource Include="img\Camera-Icon.png" />
+    <Resource Include="img\EasyID-Logo.png" />
+    <Resource Include="img\Settings-Icon.png" />
+  </ItemGroup>
+
+</Project>

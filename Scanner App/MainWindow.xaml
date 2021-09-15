@@ -1,0 +1,205 @@
+﻿<Window x:Class="Scanner_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scanner_App"
+        mc:Ignorable="d"
+        Title="ID Scanner" Height="1024" Width="1366" ResizeMode="NoResize" WindowState="Normal" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Background="#FF111111">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FF343434">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260*"/>
+                <ColumnDefinition Width="842*"/>
+                <ColumnDefinition Width="167*"/>
+                <ColumnDefinition Width="97*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.ColumnSpan="2" Margin="0,0,339,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label x:Name="lbl_time" Content="7:01 pm" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Bottom" Foreground="White" FontFamily="Keep Calm Med" FontSize="20" Width="110" FontWeight="Bold"/>
+                <Label x:Name="lbl_date" Content="12/09/2021" Margin="20,50,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Keep Calm Med" FontSize="18" HorizontalAlignment="Left" Width="132" FontWeight="Normal" Grid.RowSpan="2" FontStyle="Normal"/>
+            </Grid>
+            <Image Grid.Column="3" Height="42" VerticalAlignment="Center" Source="/img/Settings-Icon.png" HorizontalAlignment="Center" Width="48"/>
+            <Image HorizontalAlignment="Center" Height="81" VerticalAlignment="Center" Width="82" Source="/img/EasyID-Small.png" Grid.Column="1"/>
+            <Button Content="History" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="132" FontSize="24" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF575757" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Column="2">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="1" BorderBrush="Black" Grid.Column="1" Margin="10,15,10,15" CornerRadius="5,5,5,5" Background="#FF232323">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="ID Photo" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Keep Calm Med" FontSize="22" Width="127" FontWeight="Bold" Margin="25,0,0,0"/>
+                    <Border BorderThickness="1" Grid.Row="1" Margin="10,10,10,10" CornerRadius="5,5,5,5" Background="#FF343434" BorderBrush="#FF343434">
+                        <Image Source="/ID-Icon.png" Margin="84,58,84,142"/>
+                    </Border>
+                    <Label Content="Scan Patron ID" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFBFBFBF" FontFamily="Keep Calm Med" FontSize="20" Width="167" FontWeight="Normal" Margin="0,283,0,0" Grid.Row="1" FontStyle="Normal"/>
+                </Grid>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2" Margin="10,15,15,15" CornerRadius="5,5,5,5" Background="#FF232323">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="1" Grid.Row="1" Margin="10,10,10,10" CornerRadius="5,5,5,5" Background="#FF343434" BorderBrush="#FF343434">
+                        <Image Source="/img/Camera-Icon.png" Margin="57,42,58,121"/>
+                    </Border>
+                    <Label Content="Camera" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Keep Calm Med" FontSize="22" Width="175" FontWeight="Bold" Margin="25,0,0,0"/>
+                </Grid>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="Black" Margin="15,15,10,15" CornerRadius="5,5,5,5" Background="#FF232323">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="1" Grid.Row="1" Margin="10,10,10,10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Button Content="Manual Entry" HorizontalAlignment="Center" VerticalAlignment="Center" Height="71" Width="443" FontSize="24" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF575757" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Row="4">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Border BorderThickness="1" BorderBrush="#FF343434" CornerRadius="5,5,5,5" Margin="0,0,5,0" Height="71" VerticalAlignment="Center" HorizontalAlignment="Right" Width="217" Background="#FF343434">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="2*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBox VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontFamily="Source Sans Pro Light" FontSize="28" HorizontalAlignment="Center" Width="197" Grid.Row="1"/>
+                                        <Label Content="Date of Birth" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Center" Foreground="White" FontFamily="Source Sans Pro"/>
+                                    </Grid>
+                                </Border>
+                                <Border BorderThickness="1" BorderBrush="#FF343434" CornerRadius="5,5,5,5" Margin="5,0,0,0" Height="71" VerticalAlignment="Center" HorizontalAlignment="Left" Width="217" Background="#FF343434" Grid.Column="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="2*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBox VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontFamily="Source Sans Pro Light" FontSize="28" HorizontalAlignment="Center" Width="197" Grid.Row="1"/>
+                                        <Label Content="Age" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Center" Foreground="White" FontFamily="Source Sans Pro"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Border BorderThickness="1" BorderBrush="#FF343434" CornerRadius="5,5,5,5" Height="71" VerticalAlignment="Center" HorizontalAlignment="Center" Width="443" Background="#FF343434" Grid.Row="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBox VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontFamily="Source Sans Pro Light" FontSize="28" HorizontalAlignment="Center" Width="421" Grid.Row="1"/>
+                                    <Label Content="Name" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Center" Foreground="White" FontFamily="Source Sans Pro"/>
+                                </Grid>
+                            </Border>
+                            <Border BorderThickness="1" BorderBrush="#FF343434" CornerRadius="5,5,5,5" Height="71" VerticalAlignment="Center" HorizontalAlignment="Center" Width="443" Background="#FF343434" Grid.Row="2">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBox VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontFamily="Source Sans Pro Light" FontSize="28" HorizontalAlignment="Center" Width="421" Grid.Row="1"/>
+                                    <Label Content="ID Expiry" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Center" Foreground="White" FontFamily="Source Sans Pro"/>
+                                </Grid>
+                            </Border>
+                            <Border BorderThickness="1" BorderBrush="#FF343434" CornerRadius="5,5,5,5" Height="71" VerticalAlignment="Center" HorizontalAlignment="Center" Width="443" Background="#FF343434" Grid.Row="3">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBox VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontFamily="Source Sans Pro Light" FontSize="28" HorizontalAlignment="Center" Width="421" Grid.Row="1"/>
+                                    <Label Content="Gender" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Center" Foreground="White" FontFamily="Source Sans Pro"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Label Content="Details" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Keep Calm Med" FontSize="22" Width="190" FontWeight="Bold" Margin="25,0,0,0"/>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Approve" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="370" FontSize="28" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF3F7832" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Reject" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="371" FontSize="28" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF813737" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Column="1">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Scan" HorizontalAlignment="Center" VerticalAlignment="Center" Height="81" Width="370" FontSize="28" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF374B81" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Column="3">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Flag" HorizontalAlignment="Right" VerticalAlignment="Center" Height="81" Width="175" FontSize="28" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF575757" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Column="2" Margin="0,0,10,0">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Border BorderThickness="1" BorderBrush="Black" Margin="15,10,15,10" CornerRadius="5,5,5,5" Background="#FF232323" Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Ready To Scan Patron ID" HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Center" Foreground="White" FontFamily="Keep Calm Med" FontSize="24" Width="329" FontWeight="Bold"/>
+                <Label Content="Scan Patron ID or use Manual Entry to get started." HorizontalAlignment="Left" Margin="25,12,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Keep Calm Med" FontSize="20" Width="559" FontWeight="Normal" Grid.Row="1"/>
+            </Grid>
+        </Border>
+        <Label Content="Take patron photo" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFBFBFBF" FontFamily="Keep Calm Med" FontSize="20" Width="200" FontWeight="Normal" Margin="1048,393,0,0" Grid.Row="1" FontStyle="Normal"/>
+
+    </Grid>
+</Window>
