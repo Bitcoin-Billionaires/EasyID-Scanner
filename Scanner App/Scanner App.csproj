@@ -13,6 +13,8 @@
     <None Remove="img\EasyID-Logo.png" />
     <None Remove="img\EasyID-Small.png" />
     <None Remove="img\ID-Icon.png" />
+    <None Remove="img\id-photo.jpg" />
+    <None Remove="img\patron-photo.jpeg" />
     <None Remove="img\Settings-Icon.png" />
   </ItemGroup>
 
@@ -22,6 +24,8 @@
     <Resource Include="img\ID-Icon.png" />
     <Resource Include="img\Camera-Icon.png" />
     <Resource Include="img\EasyID-Logo.png" />
+    <Resource Include="img\id-photo.jpg" />
+    <Resource Include="img\patron-photo.jpeg" />
     <Resource Include="img\Settings-Icon.png" />
   </ItemGroup>
 
