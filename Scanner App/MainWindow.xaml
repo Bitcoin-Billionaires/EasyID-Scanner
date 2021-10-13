@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scanner_App"
         mc:Ignorable="d"
-        Title="EasyID Scanner" Height="1024" Width="1366" ResizeMode="NoResize" WindowState="Normal" WindowStartupLocation="CenterScreen" WindowStyle="None" Icon="/ID-Icon.png">
+        Title="EasyID Scanner" Height="1024" Width="1366" ResizeMode="NoResize" WindowState="Normal" WindowStartupLocation="CenterScreen" WindowStyle="None" Icon="/img/ID-Icon.png">
     <Grid Background="#FF111111">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -15,22 +15,28 @@
         </Grid.RowDefinitions>
         <Grid Background="#FF343434" MouseDown="Grid_MouseDown">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="260*"/>
-                <ColumnDefinition Width="842*"/>
-                <ColumnDefinition Width="167*"/>
-                <ColumnDefinition Width="97*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.ColumnSpan="2" Margin="0,0,339,0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Label x:Name="lbl_time" Content="-" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Bottom" Foreground="White" FontFamily="Keep Calm Med" FontSize="20" Width="132" FontWeight="Bold"/>
-                <Label x:Name="lbl_date" Content="-" Margin="20,50,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Keep Calm Med" FontSize="18" HorizontalAlignment="Left" Width="132" FontWeight="Normal" Grid.RowSpan="2" FontStyle="Normal"/>
+                <Label x:Name="lbl_time" Content="- time -" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Bottom" Foreground="White" FontFamily="Keep Calm Med" FontSize="20" Width="132" FontWeight="Bold"/>
+                <Label x:Name="lbl_date" Content="- date -" Margin="20,50,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Keep Calm Med" FontSize="18" HorizontalAlignment="Left" Width="132" FontWeight="Normal" Grid.RowSpan="2" FontStyle="Normal"/>
             </Grid>
-            <Image Grid.Column="3" Height="42" VerticalAlignment="Center" Source="/img/Settings-Icon.png" HorizontalAlignment="Center" Width="48"/>
-            <Image HorizontalAlignment="Center" Height="81" VerticalAlignment="Center" Width="82" Source="/img/EasyID-Small.png" Grid.Column="1"/>
-            <Button Content="History" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="132" FontSize="24" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF575757" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Column="2">
+            <Image x:Name="img_logo" HorizontalAlignment="Center" Height="81" VerticalAlignment="Center" Width="82" Source="/img/EasyID-Small.png" Grid.Column="1"/>
+            <Button x:Name="btn_history" Content="History" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="132" FontSize="24" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF575757" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Column="2" Margin="68,0,0,0" Click="btn_history_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Logout" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="132" FontSize="24" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF813737" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Column="3" Click="CloseWindow">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="5"/>
@@ -52,7 +58,7 @@
                     </Grid.RowDefinitions>
                     <Label Content="ID Photo" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Keep Calm Med" FontSize="22" Width="127" FontWeight="Bold" Margin="25,0,0,0"/>
                     <Border x:Name="border_id" BorderThickness="1" Grid.Row="1" Margin="10,10,10,10" CornerRadius="5,5,5,5" Background="#FF343434" BorderBrush="#FF343434">
-                        <Image Source="/ID-Icon.png" Margin="84,58,84,142"/>
+                        <Image Source="img/ID-Icon.png" Margin="84,58,84,142"/>
                     </Border>
                     <Label x:Name="lbl_id" Content="Scan Patron ID" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFBFBFBF" FontFamily="Keep Calm Med" FontSize="20" Width="167" FontWeight="Normal" Margin="0,283,0,0" Grid.Row="1" FontStyle="Normal"/>
                 </Grid>
@@ -67,6 +73,13 @@
                         <Image Source="/img/Camera-Icon.png" Margin="57,42,58,121"/>
                     </Border>
                     <Label Content="Camera" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Keep Calm Med" FontSize="22" Width="175" FontWeight="Bold" Margin="25,0,0,0"/>
+                    <Button x:Name="btn_history_Copy" Content="Capture" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="112" FontSize="24" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF575757" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Margin="278,0,0,0" Click="WebcamToggle">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Grid>
             </Border>
             <Border BorderThickness="1" BorderBrush="Black" Margin="15,15,10,15" CornerRadius="5,5,5,5" Background="#FF232323">
@@ -160,7 +173,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btn_approve" Content="Approve" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="370" FontSize="28" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF3F7832" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Click="btn_approve_Click">
+            <Button x:Name="btn_approve" Content="Approve" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="370" FontSize="28" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF3F7832" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Click="PatronApproved">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
@@ -181,7 +194,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="btn_flag" Content="Flag" HorizontalAlignment="Right" VerticalAlignment="Center" Height="81" Width="175" FontSize="28" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF575757" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Column="2" Margin="0,0,10,0" Click="btn_flag_Click">
+            <Button x:Name="btn_flag" Content="Flag" HorizontalAlignment="Right" VerticalAlignment="Center" Height="81" Width="175" FontSize="28" FontFamily="Source Sans Pro" BorderBrush="#FF343434" Background="#FF816D37" Foreground="White" FontWeight="Bold" BorderThickness="1,1,1,1" Grid.Column="2" Margin="0,0,10,0" Click="PatronFlagRejected">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="5"/>
@@ -200,6 +213,5 @@
             </Grid>
         </Border>
         <Label x:Name="lbl_patron" Content="Take patron photo" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFBFBFBF" FontFamily="Keep Calm Med" FontSize="20" Width="200" FontWeight="Normal" Margin="1048,393,0,0" Grid.Row="1" FontStyle="Normal"/>
-
     </Grid>
 </Window>

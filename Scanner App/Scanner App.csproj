@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ID-Icon.png" />
     <None Remove="img\Camera-Icon.png" />
     <None Remove="img\EasyID-Logo.png" />
     <None Remove="img\EasyID-Small.png" />
@@ -19,7 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="ID-Icon.png" />
+    <PackageReference Include="CsvHelper" Version="27.1.1" />
+    <PackageReference Include="OpenCvSharp4" Version="4.5.3.20210817" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.5.3.20210817" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="img\EasyID-Small.png" />
     <Resource Include="img\ID-Icon.png" />
     <Resource Include="img\Camera-Icon.png" />
@@ -27,6 +31,13 @@
     <Resource Include="img\id-photo.jpg" />
     <Resource Include="img\patron-photo.jpeg" />
     <Resource Include="img\Settings-Icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Window1 - Copy.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Window1.xaml.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
