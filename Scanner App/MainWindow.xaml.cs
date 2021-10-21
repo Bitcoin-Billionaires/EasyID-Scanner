@@ -85,7 +85,7 @@ namespace Scanner_App
                 capture.Read(frame);
                 image = BitmapConverter.ToBitmap(frame);
 
-                currentCamFrame.Dispatcher.Invoke(new Action((() => currentCamFrame.Source = BitmapToImageSource(image))));
+                currentCamFrame.Dispatcher.Invoke(new Action(() => currentCamFrame.Source = BitmapToImageSource(image)));
             }
         }
 
@@ -107,8 +107,8 @@ namespace Scanner_App
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            lbl_time.Content = DateTime.Now.ToString("h:mm tt");
-            lbl_date.Content = DateTime.Now.ToString("d");
+            lbl_time.Dispatcher.Invoke(new Action(() => lbl_time.Content = DateTime.Now.ToString("h:mm tt")));
+            lbl_date.Dispatcher.Invoke(new Action(() => lbl_date.Content = DateTime.Now.ToString("d")));
         }
 
         private void btn_scan_Click(object sender, RoutedEventArgs e)
